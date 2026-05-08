@@ -1,0 +1,233 @@
+/* style.css */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  background: #ececec;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+  width: 100%;
+  padding: 22px 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg,#ff7a18,#ff2d95);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.logo{
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-links{
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a{
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-links a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after{
+  width: 100%;
+}
+
+.menu{
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* ================= HOME ================= */
+
+.home-container{
+  min-height: 92vh;
+  background: linear-gradient(135deg,#ff7a18,#ff2d95);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 60px 80px;
+  overflow: hidden;
+  position: relative;
+  color: white;
+}
+
+/* Decorative Circles */
+
+.home-container::before,
+.home-container::after{
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+}
+
+.home-container::before{
+  width: 250px;
+  height: 250px;
+  top: -70px;
+  right: -70px;
+}
+
+.home-container::after{
+  width: 180px;
+  height: 180px;
+  bottom: -50px;
+  left: -50px;
+}
+
+/* ================= LEFT ================= */
+
+.left-section{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle{
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ffb21d;
+  border: 12px solid rgba(255,255,255,0.2);
+  box-shadow:
+    0 15px 35px rgba(0,0,0,0.3),
+    0 0 25px rgba(255,255,255,0.2);
+  animation: float 3s ease-in-out infinite;
+}
+
+.circle img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Floating Animation */
+
+@keyframes float{
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(-12px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+/* ================= RIGHT ================= */
+
+.right-section{
+  flex: 1;
+  padding-left: 40px;
+}
+
+.right-section h3{
+  font-size: 30px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.right-section h1{
+  font-size: 95px;
+  line-height: 95px;
+  font-weight: 800;
+  text-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.right-section span{
+  color: #ffd000;
+}
+
+.right-section p{
+  width: 75%;
+  margin: 25px 0;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.9);
+}
+
+/* Button */
+
+.right-section button{
+  padding: 16px 38px;
+  border: none;
+  border-radius: 40px;
+  background: #ffd000;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.right-section button:hover{
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 950px){
+
+  .home-container{
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .right-section{
+    padding-left: 0;
+    margin-top: 40px;
+  }
+
+  .right-section p{
+    width: 100%;
+  }
+
+  .right-section h1{
+    font-size: 70px;
+    line-height: 70px;
+  }
+
+  .circle{
+    width: 320px;
+    height: 320px;
+  }
+
+  .nav-links{
+    display: none;
+  }
+}
